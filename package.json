@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@react-spring/web": "^9.5.5",
     "@types/jest": "^26.0.15",
     "connect-history-api-fallback": "^1.6.0",
     "copy-webpack-plugin": "^6.2.1",
@@ -37,7 +38,8 @@
     "express": "^4.17.1",
     "express-static-gzip": "^2.1.0",
     "pg": "^8.6.0",
-    "preact": "^10.5.5"
+    "preact": "^10.5.5",
+    "react-tinder-card": "^1.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
