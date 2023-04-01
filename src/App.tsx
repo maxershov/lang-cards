@@ -2,17 +2,18 @@
 import React, { useState } from 'preact/compat';
 import SwipeCard from './Components/SwipeCard';
 import styles from './App.module.css';
-import { data } from './data';
+import { dataFull } from './data';
 import { mapWords } from './Utils/MapWords';
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
   require('preact/debug');
 }
-const words = mapWords(data);
+const words = mapWords(dataFull);
 
 const App = () => {
-  const [items, setItems] = useState(words);
+  const [items, setItems] = useState(words.slice(0, 6));
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTranslated, setIsTranslated] = useState(false);
 
   const handleSwipeRight = () => {
@@ -31,8 +32,21 @@ const App = () => {
     });
   };
 
+  const handleAddMoreCards = () => {
+    const newItems = words.slice(currentIndex + 6, currentIndex + 12);
+    setItems((prev) => [...prev, ...newItems]);
+    setCurrentIndex((prev) => prev + 6);
+  };
+
   return (
     <div className={styles.app}>
+      <button
+        className={styles.button}
+        type="button"
+        onClick={handleAddMoreCards}
+      >
+        Load More
+      </button>
       {items.map((item, index) => (
         <>
           <SwipeCard

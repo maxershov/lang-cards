@@ -12,6 +12,26 @@ body {
   justify-content: center;
 }
 
+.button {
+  position: absolute;
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 32px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
 
 @keyframes gradient {
   0% {
