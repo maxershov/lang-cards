@@ -48,7 +48,7 @@ const App = () => {
             onSwipeLeft={handleSwipeLeft}
             style={{
               zIndex: items.length - index,
-              transform: `translateY(-${index * 15}px)`,
+              transform: `translate(-50%, -50%) translateY(-${index * 15}px)`,
             }}
           />
         </>

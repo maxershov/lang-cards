@@ -1,8 +1,7 @@
 .cardContainer {
   position: absolute;
-  top: 0;
-
-  bottom: 0;
+  top: 50%;
+  left: 50%;
   width: 400px;
   height: 500px;
   display: flex;
