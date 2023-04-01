@@ -1,3 +1,10 @@
+body {
+  background: radial-gradient(circle, #ff99cc, #99ccff);
+  background-size: cover;
+  background-position: center center;
+  animation: gradient 20s ease infinite;
+}
+
 .app {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
@@ -13,4 +20,19 @@
   justify-content: center;
   position: relative;
   height: 500px;
+}
+
+@keyframes gradient {
+  0% {
+    background-size: 150%;
+    background-position: 50% 50%;
+  }
+  50% {
+    background-size: 200%;
+    background-position: 0% 100%;
+  }
+  100% {
+    background-size: 150%;
+    background-position: 50% 50%;
+  }
 }
