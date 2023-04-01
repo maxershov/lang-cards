@@ -7,9 +7,7 @@ export const data = [
 
 export const dataFull = [
   ['de', 'of'],
-  ['la', 'the'],
   ['que', 'that'],
-  ['el', 'the'],
   ['en', 'in'],
   ['y', 'and'],
   ['a', 'to'],
