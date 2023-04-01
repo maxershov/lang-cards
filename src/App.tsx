@@ -2,23 +2,17 @@
 import React, { useState } from 'preact/compat';
 import SwipeCard from './Components/SwipeCard';
 import styles from './App.module.css';
+import { data } from './data';
+import { mapWords } from './Utils/MapWords';
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
   require('preact/debug');
 }
+const words = mapWords(data);
 
 const App = () => {
-  const [items, setItems] = useState([
-    { word: 'Uno' },
-    { word: 'One', isTranslate: true },
-    { word: 'Dos' },
-    { word: 'Two', isTranslate: true },
-    { word: 'Tres' },
-    { word: 'Three', isTranslate: true },
-    { word: 'Cuatro' },
-    { word: 'Four', isTranslate: true },
-  ]);
+  const [items, setItems] = useState(words);
   const [isTranslated, setIsTranslated] = useState(false);
 
   const handleSwipeRight = () => {
@@ -48,7 +42,7 @@ const App = () => {
             onSwipeLeft={handleSwipeLeft}
             style={{
               zIndex: items.length - index,
-              transform: `translate(-50%, -50%) translateY(-${index * 15}px)`,
+              transform: `translate(-50%, -50%) translateY(-${index * 20}px)`,
             }}
           />
         </>

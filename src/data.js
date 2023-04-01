@@ -1,8 +1,8 @@
 export const data = [
-  { word: 'Uno', translate: 'One' },
-  { word: 'Dos', translate: 'Two' },
-  { word: 'Tres', translate: 'Three' },
-  { word: 'Cuatro', translate: 'Four' },
+  ['Uno', 'One'],
+  ['Dos', 'Two'],
+  ['Tres', 'Three'],
+  ['Cuatro', 'Four'],
 ];
 
 export const dataFull = [

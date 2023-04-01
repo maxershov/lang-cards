@@ -1,17 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'preact/compat';
 import TinderCard from 'react-tinder-card';
+import { WordPair } from '@/Utils/MapWords';
 import styles from './SwipeCard.module.css';
-
-interface Item {
-  word: string;
-  isTranslate?: boolean;
-}
 
 interface SwipeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   onSwipeLeft: () => void;
   onSwipeRight: () => void;
-  item?: Item;
+  item?: WordPair;
 }
 
 const SwipeCard: React.FC<SwipeCardProps> = ({
@@ -33,13 +29,13 @@ const SwipeCard: React.FC<SwipeCardProps> = ({
     <div className={styles.cardContainer} {...rest}>
       {item && (
         <TinderCard
-          key={item.word}
+          key={item}
           onSwipe={(dir: string) => onCardSwipe(dir)}
           preventSwipe={['up', 'down']}
           className={styles.swipeCard}
         >
-          <h3>{item.word}</h3>
-          {item.isTranslate && <p>TRANSLATED</p>}
+          <h3 className={styles.title}>{item.word}</h3>
+          <h3 className={styles.title}>{item.translate}</h3>
         </TinderCard>
       )}
     </div>
