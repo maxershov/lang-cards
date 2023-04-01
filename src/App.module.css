@@ -1,3 +1,10 @@
+body {
+  background: radial-gradient(circle, #ff99cc, #99ccff);
+  background-size: cover;
+  background-position: center center;
+  animation: gradient 20s ease infinite;
+}
+
 .app {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
@@ -5,12 +12,40 @@
   justify-content: center;
 }
 
-.cards {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 500px;
+.button {
+  position: absolute;
+  bottom: 20px;
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 32px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+@keyframes gradient {
+  0% {
+    background-size: 150%;
+    background-position: 50% 50%;
+  }
+  50% {
+    background-size: 200%;
+    background-position: 0% 100%;
+  }
+  100% {
+    background-size: 150%;
+    background-position: 50% 50%;
+  }
+}
+
