@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'preact/compat';
 import TinderCard from 'react-tinder-card';
-import { WordPair } from '@/Utils/MapWords';
+import {WordPair}  from '../../../types';
 import styles from './SwipeCard.module.css';
 
 interface SwipeCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -35,7 +35,7 @@ const SwipeCard: React.FC<SwipeCardProps> = ({
           className={styles.swipeCard}
         >
           <h3 className={styles.title}>{item.word}</h3>
-          <h3 className={styles.title}>{item.translate}</h3>
+          <h3 className={styles.translate}>{item.translate}</h3>
         </TinderCard>
       )}
     </div>

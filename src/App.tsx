@@ -4,12 +4,15 @@ import SwipeCard from './Components/SwipeCard';
 import styles from './App.module.css';
 import { dataFull } from './data';
 import { mapWords } from './Utils/MapWords';
+import { shuffleArray } from './Utils/ShuffleArray';
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
   require('preact/debug');
 }
-const words = mapWords(dataFull);
+
+const shuffledWords = shuffleArray(dataFull);
+const words = mapWords(shuffledWords);
 
 const App = () => {
   const [items, setItems] = useState(words.slice(0, 6));
@@ -40,13 +43,6 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <button
-        className={styles.button}
-        type="button"
-        onClick={handleAddMoreCards}
-      >
-        Load More
-      </button>
       {items.map((item, index) => (
         <>
           <SwipeCard
@@ -61,6 +57,13 @@ const App = () => {
           />
         </>
       ))}
+      <button
+        className={styles.button}
+        type="button"
+        onClick={handleAddMoreCards}
+      >
+        Load More
+      </button>
     </div>
   );
 };

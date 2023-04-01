@@ -1,7 +1,4 @@
-export interface WordPair {
-  word: string;
-  translate: string;
-}
+import {WordPair}  from '../../../types';
 
 export function mapWords(words: string[][]): WordPair[] {
   const result: WordPair[] = [];
