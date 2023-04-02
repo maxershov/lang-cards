@@ -6,11 +6,6 @@ import { dataFull } from './data';
 import { mapWords } from './Utils/MapWords';
 import { shuffleArray } from './Utils/ShuffleArray';
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  require('preact/debug');
-}
-
 const shuffledWords = shuffleArray(dataFull);
 const words = mapWords(shuffledWords);
 
@@ -25,14 +20,14 @@ const App = () => {
   };
 
   const handleSwipeLeft = () => {
-    setIsTranslated(false);
-
     setItems((prev) => {
       if (isTranslated) {
         return prev.slice(1);
       }
       return prev.slice(2);
     });
+
+    setIsTranslated(false);
   };
 
   const handleAddMoreCards = () => {

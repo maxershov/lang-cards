@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'preact/compat';
 import TinderCard from 'react-tinder-card';
-import {WordPair}  from '../../../types';
+import { WordPair } from '../../../types';
 import styles from './SwipeCard.module.css';
 
 interface SwipeCardProps extends React.HTMLAttributes<HTMLDivElement> {
